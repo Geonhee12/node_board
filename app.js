@@ -27,6 +27,7 @@ app.use(express.static(__dirname + '/public'));
 app.use(methodOverride('_method'));
 
 // 가져오기
+
 const listRouter = require('./router/list');
 app.use('/list', listRouter);
 
@@ -50,6 +51,8 @@ app.use('/edit', editRouter);
 
 const pageRouter = require('./router/page');
 app.use('/page', pageRouter);
+
+app.use('/', pageRouter);
 
 const searchRouter = require('./router/search');
 app.use('/search', searchRouter);
